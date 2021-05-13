@@ -43,11 +43,24 @@ import { fromFetch } from 'rxjs/fetch';
 })();
 
 
-// Task 3. switchMap()
+// Task 3.1. switchMap()
 // Создайте внешний поток, используя fromFetch('https://api.github.com/users?per_page=5')
 // Создайте для результата внешнего потока внутренний поток response.json(), используя switchMap()
 // Дополнительно фильтруйте элементы внешнего потока по условию response.ok === true
-(function task3(): void {
+(function task3_1(): void {
+    // const stream$ = 
+
+    // run(stream$);
+})();
+
+// Task 3.2. switchMap() Author: Dzmitry Skurat
+// Создайте поток по вводу количества записей на странице в текстовое поле.
+// для запроса ajax(`https://api.github.com/users?per_page=${perPage}`)
+// Чтобы не спамить сервер поставте задердку в 1000мс через debounceTime().
+// С помощью distinctUntilChanged() исключите отправку двух повторных запросов на сервер.
+// Выведите массив логинов.
+// Операторы, которые могут понадобиться: switchMap(), debounceTime(), pluck(), map().
+(function task3_2(): void {
     // const stream$ = 
 
     // run(stream$);

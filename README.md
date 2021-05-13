@@ -7,3 +7,5 @@ Run the Project
 > npm start
 
 Contributors:
+1. Dzmitry Skurat (<Dzmitry_Skurat@epam.com>):
+    - Add Task 3.2 
