@@ -1,14 +1,9 @@
-// switchMapTo<T, I, R>(
-//   innerObservable: any, 
-//   resultSelector?: ( // DEPRECATED
-//     outerValue: T, 
-//     innerValue: I, 
-//     outerIndex: number, 
-//     innerIndex: number
-//   ) => R
-// ): OperatorFunction<T, I | R>
+// switchMapTo<T, R, O extends ObservableInput<unknown>>(
+//     innerObservable: O, 
+//     resultSelector?: (outerValue: T, innerValue: ObservedValueOf<O>, outerIndex: number, innerIndex: number) => R // DEPRECATED
+// ): OperatorFunction<T, ObservedValueOf<O> | R>
 
-import { fromEvent, interval, map, mergeMapTo, switchMapTo, take } from 'rxjs';
+import { fromEvent, interval, switchMapTo, take } from 'rxjs';
 import { run } from './../03-utils';
 
 

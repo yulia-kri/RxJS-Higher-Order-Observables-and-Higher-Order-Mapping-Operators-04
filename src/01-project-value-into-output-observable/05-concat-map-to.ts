@@ -1,4 +1,4 @@
-// concatMapTo<T, R, O extends ObservableInput<any>>(
+// concatMapTo<T, R, O extends ObservableInput<unknown>>(
 //     innerObservable: O, 
 //     resultSelector?: (   // DEPRECATED
 //       outerValue: T, 

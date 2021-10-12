@@ -1,4 +1,4 @@
-// mergeMapTo<T, R, O extends ObservableInput<any>>(
+// mergeMapTo<T, R, O extends ObservableInput<unknown>>(
 //   innerObservable: O, 
 //   resultSelector?: // DEPRECATED
 //       number | 
