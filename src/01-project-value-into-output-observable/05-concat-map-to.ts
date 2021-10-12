@@ -7,8 +7,7 @@
 //       innerIndex: number) => R
 // ): OperatorFunction<T, ObservedValueOf<O> | R>
 
-import { fromEvent, interval } from 'rxjs';
-import { concatMapTo, take } from 'rxjs/operators';
+import { fromEvent, interval, concatMapTo, take } from 'rxjs';
 import { run } from './../03-utils';
 
 

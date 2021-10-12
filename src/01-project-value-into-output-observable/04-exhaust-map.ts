@@ -2,8 +2,7 @@
 //   project: (value: T, index: number) => O, 
 //   resultSelector?: (outerValue: T, innerValue: ObservedValueOf<O>, outerIndex: number, innerIndex: number) => R // DEPRECATED
 // ): OperatorFunction<T, ObservedValueOf<O> | R>
-import { fromEvent, interval } from 'rxjs';
-import { exhaustMap, take } from 'rxjs/operators';
+import { fromEvent, interval, exhaustMap, take } from 'rxjs';
 import { run } from './../03-utils';
 
 // Use Case: Ignore source stream until nested stream emits

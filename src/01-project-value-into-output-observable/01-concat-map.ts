@@ -3,8 +3,7 @@
 //   resultSelector?: (outerValue: T, innerValue: ObservedValueOf<O>, outerIndex: number, innerIndex: number) => R // DEPRECATED
 // ): OperatorFunction<T, ObservedValueOf<O> | R>
 
-import { of, Observable } from 'rxjs';
-import { concatMap, delay } from 'rxjs/operators';
+import { of, Observable, concatMap, delay } from 'rxjs';
 import { run } from './../03-utils';
 
 // antipattern

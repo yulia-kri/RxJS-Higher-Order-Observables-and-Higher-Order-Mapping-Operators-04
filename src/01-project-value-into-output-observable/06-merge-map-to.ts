@@ -6,8 +6,7 @@
 //   concurrent: number = Number.POSITIVE_INFINITY
 // ): OperatorFunction<T, ObservedValueOf<O> | R>
 
-import { fromEvent, interval } from 'rxjs';
-import { mergeMapTo, take } from 'rxjs/operators';
+import { fromEvent, interval, mergeMapTo, take } from 'rxjs';
 import { run } from './../03-utils';
 
 

@@ -4,8 +4,7 @@
 //   concurrent: number = Number.POSITIVE_INFINITY
 // ): OperatorFunction<T, ObservedValueOf<O> | R>
 
-import { fromEvent, interval, Observable, from } from 'rxjs';
-import { mergeMap, map, mapTo, scan } from 'rxjs/operators';
+import { fromEvent, interval, Observable, from, mergeMap, map, mapTo, scan } from 'rxjs';
 import { run } from './../03-utils';
 
 // Use Case: Nested streams in parallel

@@ -8,8 +8,7 @@
 //   ) => R
 // ): OperatorFunction<T, I | R>
 
-import { fromEvent, interval } from 'rxjs';
-import { map, mergeMapTo, switchMapTo, take } from 'rxjs/operators';
+import { fromEvent, interval, map, mergeMapTo, switchMapTo, take } from 'rxjs';
 import { run } from './../03-utils';
 
 
