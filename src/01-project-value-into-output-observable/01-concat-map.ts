@@ -1,7 +1,13 @@
-// concatMap<T, R, O extends ObservableInput<any>>(
-//   project: (value: T, index: number) => O, 
+// concatMap<T, R, Obs extends ObservableInput<any>>(
+//   project: (value: T, index: number) => Obs,
 //   resultSelector?: (outerValue: T, innerValue: ObservedValueOf<O>, outerIndex: number, innerIndex: number) => R // DEPRECATED
-// ): OperatorFunction<T, ObservedValueOf<O> | R>
+// ): OperatorFunction<T, ObservedValueOf<Obs> | R>
+
+// каждый элемент внешнего потока преобразует во внутренний поток с помощью функции project()
+// завершает работу, когда заканчиваются элементы из внешнего потока
+// если поток бесконечный - не сможет из него выйти
+// использовать когда порядок важен
+// последовательно!
 
 import { of, Observable, concatMap, delay } from 'rxjs';
 import { run } from './../03-utils';
@@ -10,11 +16,11 @@ import { run } from './../03-utils';
 export function concatMapDemo1() {
   const ids$ = of(1, 2, 3); // <-- ids of objects - Outer Observable
 
-  ids$.subscribe(id => {
+  ids$.subscribe((id) => {
     const innerObservable$ = emulateHttpCall(id); // <-- Inner Observable
 
     // antipattern: subscribe inside subscribe
-    // run(innerObservable$);
+    // run(innerObservable$); // 3 потока: 3 complete
   });
 }
 
@@ -26,9 +32,9 @@ export function concatMapDemo1() {
 export function concatMapDemo2() {
   const ids$ = of(1, 2, 3); // <-- ids of objects
 
-  const stream$ = ids$.pipe(concatMap(id => emulateHttpCall(id)));
+  const stream$ = ids$.pipe(concatMap((id) => emulateHttpCall(id)));
 
-  // run(stream$);
+  // run(stream$); // 1 complete
 }
 
 // helper function which emulates http call
@@ -42,5 +48,3 @@ function emulateHttpCall(id: number): Observable<any> {
       return of({ id: 3, name: 'Clara' }).pipe(delay(2000)); // <-- pause 2s
   }
 }
-
-
